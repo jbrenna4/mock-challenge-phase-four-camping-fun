@@ -31,7 +31,7 @@ class Camper(db.Model, SerializerMixin):
             raise ValueError('age must be between 8 and 18 years old')
         return age
 
-    serialize_rules = ('-signups','-activities.campers', '-created_at', '-updated_at')
+    serialize_rules = ('-signups.camper','-activities.campers', '-created_at', '-updated_at')
 
     def __repr__(self):
         return f'<Camper Name:{self.name}, Age:{self.age}, >'
